@@ -16,11 +16,14 @@ test('Should be null', () => {
 });
 
 test('checkValue Should be falsy when argument is undefined', () => {
-expect(functions.checkValue(x)).toBe(x)
+expect(functions.checkValue(undefined)).toBeFalsy()
 });
 
 test('User should be Brad Traversy object', () => {
-    expect( functions.createUser(user).toBe(user))
+    expect( functions.createUser()).toEqual({
+          firstName: "Brad",
+          lastName: "Traversy"
+    })
 
 });
 
@@ -32,18 +35,18 @@ test('Should be under or equal to 1600', () => {
         const load1 = 800;
   const load2 = 800;
         // expect(load1 + load2).toBe.....
-        expect(load1 + load2).toBe(1600)
+        expect(load1 + load2).toBeLessThanOrEqual(1600)
 });
 
 // Regex
 test('There is no I in team', () => {
         //  expect('team').not.to..........;
-        expect('team').not.toBeNull
+        expect('team').not.toMatch(/I/i)
 });
 
 // Arrays
 test('Admin should be in usernames', () => {
  usernames = ['john', 'karen', 'admin'];
  // expect(usernames).to......
- expect(usernames).toBe(usernames)
+ expect(usernames).toContain("admin")
 });
